@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module riscv_regfile_tb;
+module regfile_23rv_tb;
 
     parameter ADDRESS_BITWIDTH = 5;
     parameter DATA_WIDTH = 32;
@@ -13,7 +13,7 @@ module riscv_regfile_tb;
     logic we;
     logic [DATA_WIDTH-1:0] rd1, rd2;
 
-    rv23_regfile dut (
+    regfile_23rv dut (
         .clk(clk),
         .reset(reset),
         .rs1(rs1),
@@ -37,8 +37,7 @@ module riscv_regfile_tb;
         rd = 0;
         wd = 0;
 
-        #10 reset = 0;
-        #10 reset = 1;
+        #20 reset = 0;
         $display("Reset complete. All registers should be zero.");
 
         // Check that all registers are reset to zero

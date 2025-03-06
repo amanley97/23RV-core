@@ -2,6 +2,8 @@
 // 23RV Register File
 //
 
+`timescale 1ns / 1ps
+
 module regfile_23rv #(
     parameter ADDRESS_BITWIDTH = 5,
     parameter DATA_WIDTH = 32
